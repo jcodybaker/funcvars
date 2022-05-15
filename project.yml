@@ -1,0 +1,3 @@
+environment:
+  MULTILINE: "${MULTILINE}"
+  OTHER_VAR: OTHER_VALUE

@@ -1,0 +1,17 @@
+functions:
+- envs:
+  - key: MULTILINE
+    scope: RUN_AND_BUILD_TIME
+    value: >
+      line 1
+      line 2
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: jcodybaker/funcvars
+  name: vars
+  routes:
+  - path: /
+  source_dir: /
+name: funcvars
+region: nyc
