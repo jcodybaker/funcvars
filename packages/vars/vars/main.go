@@ -7,9 +7,11 @@ import (
 
 func Main(args map[string]interface{}) map[string]interface{} {
 	return wrapHTML(fmt.Sprintf(
-		"MULTILINE: %q\nHEX %q\n",
-		os.Getenv("MULTILINE"),
-		[]byte(os.Getenv("MULTILINE")),
+		"PARENTHESIS_MULTILINE: %q\nINTERNALLY_INDENTED_CURLY_BRACKET_MULTILINE %q\nQUOTED_CURLY_BRACKET %q\nQUOTED_DOUBLE_ESCAPED_CURLY_BRACKET: %q\n",
+		os.Getenv("PARENTHESIS_MULTILINE"),
+		os.Getenv("INTERNALLY_INDENTED_CURLY_BRACKET_MULTILINE"),
+		os.Getenv("QUOTED_CURLY_BRACKET"),
+		os.Getenv("QUOTED_DOUBLE_ESCAPED_CURLY_BRACKET"),
 	))
 }
 

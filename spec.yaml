@@ -5,6 +5,18 @@ functions:
     value: |
       line 1
       line 2
+  - key: PARENTHESIS_MULTILINE
+    scope: RUN_AND_BUILD_TIME
+    value: "line1\nline2"
+  - key: INTERNALLY_INDENTED_CURLY_BRACKET_MULTILINE
+    scope: RUN_AND_BUILD_TIME
+    value: "line1\n      line2"
+  - key: QUOTED_CURLY_BRACKET
+    scope: RUN_AND_BUILD_TIME
+    value: "line1\nline2",
+  - key: QUOTED_DOUBLE_ESCAPED_CURLY_BRACKET
+    scope: RUN_AND_BUILD_TIME
+    value: "line1\\nline2"
   github:
     branch: master
     deploy_on_push: true

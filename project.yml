@@ -1,3 +1,23 @@
-environment:
-  MULTILINE: "${MULTILINE}"
-  OTHER_VAR: OTHER_VALUE
+# This project level var uses the multi-line $ () variable expansion. It will properly encode
+# multiline vars. It appears to expand to a JSON representation structure like {"$k", "$v"} which
+# means it can only be used with one variable per-scope.
+environment: $(PARENTHESIS_MULTILINE)
+packages:
+- name: vars
+  environment:
+    # This package level var uses the single value substitution $ {} expansion format wrapped 
+    # in quotes. nim includes the new-line, but YAML parsing strips new-lines characters from
+    # quoted strings. NOTE: including properly escaped quotes in the value will lead to a parse
+    # error.
+    QUOTED_CURLY_BRACKET: "${QUOTED_CURLY_BRACKET}"
+    # This var leverages the YAML multi-line encoding with a | to keep internal new-lines. However
+    # these subsequent lines must be indented inside the value the same as the first was outside
+    # of the value. In this case the substitution is indented 6 spaces, the value has 0 indentation
+    # on the first line, but a matching 6 characters on the second. YAML requires indentation is
+    # 1+ characters and not the same number indentation as the key. These limitations make this
+    # multiline format VERY difficult to use.
+    INTERNALLY_INDENTED_CURLY_BRACKET_MULTILINE: |-
+      ${INTERNALLY_INDENTED_CURLY_BRACKET_MULTILINE}
+    # This var has its internal new-line double-escaped. This works because YAML will see a new-line
+    # escape literal "\n" in the quoted string.
+    QUOTED_DOUBLE_ESCAPED_CURLY_BRACKET: "${QUOTED_DOUBLE_ESCAPED_CURLY_BRACKET}"

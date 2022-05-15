@@ -1,0 +1,6 @@
+{
+    "PARENTHESIS_MULTILINE": "line1\nline2",
+    "INTERNALLY_INDENTED_CURLY_BRACKET_MULTILINE": "line1\n      line2",
+    "QUOTED_CURLY_BRACKET": "line1\nline2",
+    "QUOTED_DOUBLE_ESCAPED_CURLY_BRACKET": "line1\\nline2"
+}
