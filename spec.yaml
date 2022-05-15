@@ -2,11 +2,11 @@ functions:
 - envs:
   - key: MULTILINE
     scope: RUN_AND_BUILD_TIME
-    value: >
+    value: |
       line 1
       line 2
   github:
-    branch: main
+    branch: master
     deploy_on_push: true
     repo: jcodybaker/funcvars
   name: vars
