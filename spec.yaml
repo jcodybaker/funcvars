@@ -13,7 +13,7 @@ functions:
     value: "line1\n      line2"
   - key: QUOTED_CURLY_BRACKET
     scope: RUN_AND_BUILD_TIME
-    value: "line1\nline2",
+    value: "line1\nline2"
   - key: QUOTED_DOUBLE_ESCAPED_CURLY_BRACKET
     scope: RUN_AND_BUILD_TIME
     value: "line1\\nline2"
