@@ -2,6 +2,8 @@ This project shows how it can be difficult to encode multi-line strings for subs
 functions project.yml.  It can be run against app platform with the [provided spec file](spec.yaml)
 or the example can be run against `nim project:get-metadata` with the provided [json encoded var file](multiline.json).
 
+For understanding multi-line YAML formats, [https://yaml-multiline.info/](https://yaml-multiline.info/  ) is helpful.
+
 ```
 nim project:get-metadata --env multiline.json .
 {
