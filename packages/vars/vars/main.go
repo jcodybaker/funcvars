@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/hex"
 	"fmt"
 	"os"
 )
@@ -10,7 +9,7 @@ func Main(args map[string]interface{}) map[string]interface{} {
 	return wrapHTML(fmt.Sprintf(
 		"MULTILINE: %q\nHEX %q\n",
 		os.Getenv("MULTILINE"),
-		hex.EncodeToString([]byte(os.Getenv("MULTILINE"))),
+		[]byte(os.Getenv("MULTILINE")),
 	))
 }
 
